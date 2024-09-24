@@ -1,0 +1,375 @@
+@font-face {
+    font-family: 'retrofont';
+    src: url(retro_computer_personal_use.ttf);
+}
+@font-face {
+    font-family: 'dogica';
+    src: url(dogica.ttf);
+}
+@font-face {
+    font-family: 'dogicabold';
+    src: url(dogicabold.ttf);
+}
+/*************************** Tag Selectors ***************************/
+
+
+
+hr{
+    border-style: solid white;
+    margin-top:2px;
+    margin-bottom:2px;
+}
+div{
+    font-family: 'dogica';
+    font-size: 10px;
+}
+p{
+    font-family: 'dogica';
+    font-size: 10px;
+}
+body{
+    background-color: white;
+    margin: 0;
+}
+h1{
+    color: #4B6587;
+}
+
+h3{
+    color: #4B6587;
+}
+
+/*************************** Class Selectors ***************************/
+
+.invisible{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
+
+.topbar{
+height: 30px;
+background-color:white; 
+border-bottom: solid black 2px;
+}
+
+.topleft{
+    display: inline-block;
+    margin:0;
+    width: 30px;
+    height:30px;
+    background-color: black;
+}
+.topbarmiddle{
+    background-color: white;
+    position: relative;
+    bottom: 21px;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom:0;
+    height: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.topbarmiddle:hover {
+    position: relative;
+    bottom: 21px;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 30px;
+    filter: invert(100%);
+}
+.topbarimg{
+    position: relative;
+    bottom: 5px;
+    left: 72% ;
+    display: inline-block;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+.topbarimg2 {
+    position: relative;
+    bottom: 5px;
+    left: 1117px;
+    display: inline-block;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+}
+.topbartext{
+    font-family: 'dogica';
+    position: relative;
+    top: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.aboutme{
+    background-color: white;
+    display: inline-block;
+    width: 70px;
+    height: 90px;
+    position: absolute;
+    top: 50px;
+    left: 1260px;
+}
+.aboutmetitle{
+    position:absolute;
+    left: 60px;
+    top:60px;
+    display:inline-block;
+    font-size: 50px;
+    font-family: 'dogica';
+    
+}
+
+.aboutmetext{
+    position: absolute;
+    font-family: 'dogica';
+    left: 70px;
+    top:230px;
+    line-height: 200%;
+
+}
+.aboutmetext2{
+    position:absolute;
+    font-family: 'dogica';
+    line-height: 200%;
+    left: 170px;
+    top: 370px;
+    font-size: 8px;
+}
+
+
+.pixelme{
+    width:70px;
+    height:70px;
+}
+
+.pixelme:hover{
+    width: 70px;
+    height: 70px;
+    filter: invert(100%);
+}
+
+.projects{
+    display: inline-block;
+    background-color: white;
+    width: 70px ;
+    height:90px ;
+    position:absolute;
+    top: 50px;
+    left: 1350px;
+}
+
+.otherwork{
+    display: inline-block;
+    background-color: white;
+    width: 70px;
+    height: 90px;
+    position: absolute;
+    top: 160px;
+    left: 1350px;
+}
+
+.resume{
+    display: inline-block;
+    background-color: white;
+    width: 70px;
+    height: 90px;
+    position: absolute;
+    top: 270px;
+    left: 1350px;
+}
+
+
+.hobbies{
+    display: inline-block;
+    background-color: white;
+    width: 70px;
+    height: 90px;
+    position: absolute;
+    top: 380px;
+    left: 1350px;
+}
+
+
+.quiticon{
+    position:relative;
+    bottom: 2px;
+    left: 4px;
+    width:11px;
+    height:11px;
+
+}
+
+.divheaderleft{
+    display: inline-block;
+    background-color: black;
+}
+
+.overallheader{
+    background-color: black;
+}
+ .halfpme{
+     position: absolute;
+     bottom:37px;
+     right:37px;
+     width: 300px;
+     height:405px;
+ }
+ .halfpme2 {
+    position: absolute;
+    bottom: 37px;
+    right: 37px;
+    width: 925px;
+    height: 405px;
+ }
+
+ .classdiv1{
+     display: inline-block;
+ }
+
+ .poptraits{
+     font-family: 'dogicabold';
+ }
+
+#mydiv{
+     position: absolute;
+     height: 500px;
+     width: 1000px;
+     left: 100px;
+     top: 100px;
+     z-index: 9;
+     background-color: #f1f1f1;
+     border: 1px solid #d3d3d3;
+     text-align: center;
+ }
+
+ #mydiv2{
+     position: absolute;
+     height: 500px;
+     width: 1000px;
+     left: 120px;
+     top: 120px;
+     z-index: 8;
+     background-color: #f1f1f1;
+     border: 1px solid #d3d3d3;
+     text-align: center;
+
+ }
+#mydivheader {
+     position: relative;
+     left: 3px;
+     display: inline-block;
+     width: 96%;
+     padding: 2px 2px 2px 2px;
+     cursor: move;
+     z-index: 10;
+     background-color: black;
+     color: #fff;
+
+ }
+
+ #mydiv2header {
+     position: relative;
+     left: 3px;
+     display: inline-block;
+     width: 96%;
+     padding: 2px 2px 2px 2px;
+     cursor: move;
+     z-index: 10;
+     background-color: black;
+     color: #fff;
+
+ }
+
+
+/******************* ID Selectors (used once per page) *****************/
+#foldertext{
+    font-family:'dogica';
+    font-size: 7px;
+    position: relative;
+    bottom: 4px;
+    left: 8px;
+}
+
+#foldertext2{
+    font-family: 'dogica';
+    font-size: 7px;
+    position: relative;
+    bottom: 4px;
+    left: 8px;
+}
+
+#foldertext3{
+    font-family: 'dogica';
+    font-size: 7px;
+    position: relative;
+    bottom: 4px;
+    left: 0px;
+}
+#foldertext4{
+    font-family: 'dogica';
+    font-size: 7px;
+    position: relative;
+    bottom: 4px;
+    left: 27px;
+}
+#foldertext5 {
+    font-family: 'dogica';
+    font-size: 7px;
+    position: relative;
+    bottom: 4px;
+    left: 11px;
+}
+
+
+#bigname{
+    color: #8e8dae;
+}
+
+#cursor{
+    position:absolute;
+    width: 16px;
+    height: 18px;
+    top: 392px;
+    left:396px;
+}
+
+#hor1{
+    position: absolute;
+    top:360px;
+    left:121px;
+    border-top: 3px solid black;
+    border-bottom: 2px solid black;
+    border-right: 1px;
+    border-left: 1px;
+    width: 412px;
+}
+#hor2 {
+    position: absolute;
+    top: 435px;
+    left: 121px;
+    border-top: 3px solid black;
+    border-bottom: 2px solid black;
+    border-right: 1px;
+    border-left: 1px;
+    width: 412px;
+}
+
+#soloasterisk{
+    position: absolute;
+    left:120px;
+    top: 329px;
+    font-size: 50px;
+    display: inline-block;
+
+}

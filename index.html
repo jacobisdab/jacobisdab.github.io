@@ -1,1 +1,137 @@
-Hello World
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jacob</title>
+        <link rel="stylesheet" href="css/styles.css">
+        
+     </head>
+   
+     
+    <body>
+        
+        <div class="topbar">
+            <div class="topleft"></div>
+            
+            <div class="topbarmiddle">
+                <p class="topbartext">File</p>
+            </div>
+
+            <div class="topbarmiddle">
+                <p class="topbartext">View</p>
+            </div>
+
+            <div class="topbarmiddle">
+                <p class="topbartext">Contact Me</p>
+            </div>
+
+            <a href="https://www.instagram.com/jacob_shenn/" target="_blank"><img class="topbarimg" src="images/instagram2.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/jacobshenn" target="_blank"><img class="topbarimg" src="images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.facebook.com/jacobshenn" target="_blank"><img class="topbarimg" src="images/facebook.png"alt="Facebook"></a>
+        </div>
+
+        <div class="aboutme">
+        <img class="pixelme" ondblclick="addelement()" src="images/blackdisk.png" alt="pixelme">    
+        <p id="foldertext">about_me</p>
+        </div>
+
+        <div class="projects">
+            <img class="pixelme" ondblclick="addelement2()" src="images/bluedisk.png" alt="projects">
+            <p id="foldertext2">projects</p>
+        </div>
+
+        <div class="otherwork">
+            <img class="pixelme" src="images/pinkdisk.png" alt="otherwork">
+            <p id="foldertext3">other_work</p>
+        </div>
+
+        <div class="resume">
+            <img class="pixelme" ondblclick="downloadResume()" src="images/yellowdisk.png" alt="resume">
+            <p id="foldertext4">cv</p>
+            
+            </a>
+        </div>
+
+        <div class="hobbies">
+            <img class="pixelme" src="images/greendisk.png" alt="hobbies">
+            <p id="foldertext5">hobbies</p>
+        </div>
+
+        <div id="mydiv">
+            <div class="overallheader">
+                    <div class="divheaderleft">
+                        <img class="quiticon" onclick="hideelement()" src="images/quiticon.png" alt="x">
+                    </div>
+                    <div id="mydivheader">
+                            <hr><hr><hr>
+                    </div>
+            </div>
+            <div>
+                
+                <div class="textdiv1">
+                    <img id="cursor" src="images/cursor.png" alt="cursor">
+                    
+                    <p class="aboutmetitle">hi_im_<span id="bigname">jacob</span></p>
+                    <p class="aboutmetext">
+                       an <span class="poptraits">[aspiring_coder]</span>,<span class="poptraits"> [retro_design_enthusiast]</span>,<br>
+                        <span class="poptraits">[jazz_musician]</span>, <span class="poptraits">[athlete]</span> and <span class="poptraits">[UC_Berkeley_student]</span><br>
+                        among other things.
+                    </p>
+                    <p class="aboutmetext2">
+                        this website emulates the operating systems<br>
+                        of 80s computers so <span class="poptraits">click</span> &nbsp; &nbsp; any of the <br>
+                        folders on the right to learn more.
+                    </p>
+
+                    <hr id="hor1">
+                    <hr id="hor2">
+                    <p id="soloasterisk">*</p>
+                </div>
+                
+                <div class="textdiv1">
+                    <img class="halfpme" src="images/halfpixelme.png" alt="me!">
+                </div>
+                
+                
+
+            </div>
+        </div>
+
+
+        <div id="mydiv2">
+            <div class="overallheader">
+                <div class="divheaderleft">
+                    <img class="quiticon" onclick="hideelement2()" src="images/quiticon.png" alt="x">
+                </div>
+                <div id="mydiv2header">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+            </div>
+            <div>
+    
+                <div class="textdiv1"></div>
+                    <img class="halfpme2" src="images/halfpixelme.png" alt="me!">
+                </div>
+        
+        
+            </div>
+        </div>
+
+    
+        
+        
+        
+        <footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="index.js"></script>
+        </footer>
+
+
+    </body>
+</html>
