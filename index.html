@@ -1,137 +1,319 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jacob</title>
-        <link rel="stylesheet" href="css/styles.css">
-        
-     </head>
-   
-     
-    <body>
-        
-        <div class="topbar">
-            <div class="topleft"></div>
-            
-            <div class="topbarmiddle">
-                <p class="topbartext">File</p>
-            </div>
-
-            <div class="topbarmiddle">
-                <p class="topbartext">View</p>
-            </div>
-
-            <div class="topbarmiddle">
-                <p class="topbartext">Contact Me</p>
-            </div>
-
-            <a href="https://www.instagram.com/jacob_shenn/" target="_blank"><img class="topbarimg" src="images/instagram2.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/in/jacobshenn" target="_blank"><img class="topbarimg" src="images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.facebook.com/jacobshenn" target="_blank"><img class="topbarimg" src="images/facebook.png"alt="Facebook"></a>
-        </div>
-
-        <div class="aboutme">
-        <img class="pixelme" ondblclick="addelement()" src="images/blackdisk.png" alt="pixelme">    
-        <p id="foldertext">about_me</p>
-        </div>
-
-        <div class="projects">
-            <img class="pixelme" ondblclick="addelement2()" src="images/bluedisk.png" alt="projects">
-            <p id="foldertext2">projects</p>
-        </div>
-
-        <div class="otherwork">
-            <img class="pixelme" src="images/pinkdisk.png" alt="otherwork">
-            <p id="foldertext3">other_work</p>
-        </div>
-
-        <div class="resume">
-            <img class="pixelme" ondblclick="downloadResume()" src="images/yellowdisk.png" alt="resume">
-            <p id="foldertext4">cv</p>
-            
-            </a>
-        </div>
-
-        <div class="hobbies">
-            <img class="pixelme" src="images/greendisk.png" alt="hobbies">
-            <p id="foldertext5">hobbies</p>
-        </div>
-
-        <div id="mydiv">
-            <div class="overallheader">
-                    <div class="divheaderleft">
-                        <img class="quiticon" onclick="hideelement()" src="images/quiticon.png" alt="x">
-                    </div>
-                    <div id="mydivheader">
-                            <hr><hr><hr>
-                    </div>
-            </div>
-            <div>
-                
-                <div class="textdiv1">
-                    <img id="cursor" src="images/cursor.png" alt="cursor">
-                    
-                    <p class="aboutmetitle">hi_im_<span id="bigname">jacob</span></p>
-                    <p class="aboutmetext">
-                       an <span class="poptraits">[aspiring_coder]</span>,<span class="poptraits"> [retro_design_enthusiast]</span>,<br>
-                        <span class="poptraits">[jazz_musician]</span>, <span class="poptraits">[athlete]</span> and <span class="poptraits">[UC_Berkeley_student]</span><br>
-                        among other things.
-                    </p>
-                    <p class="aboutmetext2">
-                        this website emulates the operating systems<br>
-                        of 80s computers so <span class="poptraits">click</span> &nbsp; &nbsp; any of the <br>
-                        folders on the right to learn more.
-                    </p>
-
-                    <hr id="hor1">
-                    <hr id="hor2">
-                    <p id="soloasterisk">*</p>
-                </div>
-                
-                <div class="textdiv1">
-                    <img class="halfpme" src="images/halfpixelme.png" alt="me!">
-                </div>
-                
-                
-
-            </div>
-        </div>
-
-
-        <div id="mydiv2">
-            <div class="overallheader">
-                <div class="divheaderleft">
-                    <img class="quiticon" onclick="hideelement2()" src="images/quiticon.png" alt="x">
-                </div>
-                <div id="mydiv2header">
-                    <hr>
-                    <hr>
-                    <hr>
-                </div>
-            </div>
-            <div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacqui, Will You Be My Valentine?</title>
+  <!-- Import fun fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap" rel="stylesheet">
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+      overflow-x: hidden;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.8rem;
+      color: #E91E63;
+      margin-top: 40px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    /* Photos section */
+    .photos {
+      margin: 20px 0;
+    }
+    .photos img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      margin: 10px;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .photos img:hover {
+      transform: scale(1.05);
+    }
+    /* Puzzle container styling */
+    .puzzle {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .puzzle h2 {
+      color: #C2185B;
+    }
+    .puzzle p {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    .puzzle input[type="text"] {
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      width: 80%;
+      margin: 10px 0;
+    }
+    .puzzle button {
+      background-color: #E91E63;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin: 10px;
+    }
+    .puzzle button:hover {
+      background-color: #C2185B;
+      transform: scale(1.05);
+    }
+    /* Heart animation for final message */
+    .heart-animation {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+    }
+    .heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50px;
+      height: 50px;
+      background: #E91E63;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transform-origin: center;
+      animation: pulse 1s infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #E91E63;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -25px;
+      left: 0;
+    }
+    .heart::after {
+      left: 25px;
+      top: 0;
+    }
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2) rotate(-45deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1) rotate(-45deg);
+      }
+    }
+    /* Final message styling */
+    #finalMessage img {
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      margin: 10px auto;
+      display: block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Hey Jacqui, Will You Be My Valentine?</h1>
+    </header>
     
-                <div class="textdiv1"></div>
-                    <img class="halfpme2" src="images/halfpixelme.png" alt="me!">
-                </div>
-        
-        
-            </div>
-        </div>
+    <!-- Cute photos of you two -->
+    <div class="photos">
+      <!-- Replace these with your actual photo paths or URLs -->
+      <img src="photo1.jpg" alt="Our Cute Photo 1">
+      <img src="photo2.jpg" alt="Our Cute Photo 2">
+    </div>
 
-    
-        
-        
-        
-        <footer>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="index.js"></script>
-        </footer>
+    <!-- Puzzle 1: Solve a Riddle -->
+    <div id="puzzle1" class="puzzle">
+      <h2>Puzzle 1: Solve the Riddle</h2>
+      <p>
+        I have keys but no locks,<br>
+        I have space but no room,<br>
+        You can enter, but you can’t go outside.<br>
+        What am I?
+      </p>
+      <input type="text" id="answer1" placeholder="Your answer here">
+      <br>
+      <button id="submit1">Submit Answer</button>
+      <p id="feedback1" style="color: red;"></p>
+    </div>
 
+    <!-- Puzzle 2: Unscramble Letters -->
+    <div id="puzzle2" class="puzzle" style="display:none;">
+      <h2>Puzzle 2: Unscramble the Letters</h2>
+      <p>Unscramble the letters to reveal my secret word:</p>
+      <p style="font-size: 1.2rem; font-weight: bold;">
+        E, V, T, A, I, L, N, E
+      </p>
+      <input type="text" id="answer2" placeholder="Type the unscrambled word">
+      <br>
+      <button id="submit2">Submit Answer</button>
+      <p id="feedback2" style="color: red;"></p>
+    </div>
 
-    </body>
+    <!-- Puzzle 3: Harder Number Patterns -->
+    <div id="puzzle3" class="puzzle" style="display:none;">
+      <h2>Puzzle 3: Solve the Number Patterns</h2>
+      <!-- Puzzle 3A -->
+      <p>
+        <strong>Puzzle A:</strong> Find the next number in the sequence: <br>
+        1, 4, 10, 20, 35, ?
+      </p>
+      <input type="text" id="answer3a" placeholder="Answer for Puzzle A">
+      <!-- Puzzle 3B -->
+      <p>
+        <strong>Puzzle B:</strong> Find the next number in the sequence: <br>
+        2, 3, 5, 9, 17, ?
+      </p>
+      <input type="text" id="answer3b" placeholder="Answer for Puzzle B">
+      <br>
+      <button id="submit3">Submit Answers</button>
+      <p id="feedback3" style="color: red;"></p>
+    </div>
+
+    <!-- Final Valentine Message -->
+    <div id="finalMessage" class="puzzle" style="display:none;">
+      <h2 id="finalHeading">Jacqui, Will You Be My Valentine?</h2>
+      <!-- This container will show a photo when she rejects -->
+      <div id="finalImage"></div>
+      <!-- Heart animation shown only when she finally accepts -->
+      <div class="heart-animation" id="finalHeart" style="display:none;">
+        <div class="heart"></div>
+      </div>
+      <div id="finalButtons">
+        <button id="yesButton">Yes, I'll be your Valentine!</button>
+        <button id="noButton">No, I can't.</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include canvas-confetti library for a fun celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    // --- Puzzle 1: Riddle ---
+    document.getElementById('submit1').addEventListener('click', function() {
+      var answer1 = document.getElementById('answer1').value.trim().toLowerCase();
+      // Expected answer: "keyboard"
+      if (answer1 === 'keyboard') {
+        document.getElementById('feedback1').textContent = "Correct! On to the next puzzle...";
+        setTimeout(function(){
+          document.getElementById('puzzle1').style.display = 'none';
+          document.getElementById('puzzle2').style.display = 'block';
+        }, 1000);
+      } else {
+        document.getElementById('feedback1').textContent = "Oops, that's not right. Try again!";
+      }
+    });
+
+    // --- Puzzle 2: Unscramble Letters ---
+    document.getElementById('submit2').addEventListener('click', function() {
+      var answer2 = document.getElementById('answer2').value.trim().toLowerCase();
+      // Expected answer: "valentine"
+      if (answer2 === 'valentine') {
+        document.getElementById('feedback2').textContent = "You got it!";
+        setTimeout(function(){
+          document.getElementById('puzzle2').style.display = 'none';
+          document.getElementById('puzzle3').style.display = 'block';
+        }, 1000);
+      } else {
+        document.getElementById('feedback2').textContent = "Not quite right. Give it another try!";
+      }
+    });
+
+    // --- Puzzle 3: Harder Number Patterns ---
+    document.getElementById('submit3').addEventListener('click', function() {
+      // Puzzle 3A: Sequence: 1, 4, 10, 20, 35, ? 
+      // Pattern explanation (differences): 3, 6, 10, 15, then differences of differences: 3, 4, 5, so next difference is 6 → 15+6 = 21; Answer: 35+21 = 56.
+      var ansA = parseInt(document.getElementById('answer3a').value.trim(), 10);
+      // Puzzle 3B: Sequence: 2, 3, 5, 9, 17, ? 
+      // Pattern: differences: 1, 2, 4, 8; next difference: 16; Answer: 17+16 = 33.
+      var ansB = parseInt(document.getElementById('answer3b').value.trim(), 10);
+      if (ansA === 56 && ansB === 33) {
+        document.getElementById('feedback3').textContent = "Excellent work!";
+        setTimeout(function(){
+          document.getElementById('puzzle3').style.display = 'none';
+          document.getElementById('finalMessage').style.display = 'block';
+        }, 1000);
+      } else {
+        document.getElementById('feedback3').textContent = "One or both answers seem off. Please try again!";
+      }
+    });
+
+    // --- Final Valentine Message and Rejection Handling ---
+    var rejectionCount = 0;
+    // Array of rejection messages and associated photo filenames.
+    var rejectionMessages = [
+      { message: "Oh no, don't say no, Jacqui! I promise to make you laugh every day!", photo: "reject1.jpg" },
+      { message: "But Jacqui, you know how much I adore you. Please reconsider?", photo: "reject2.jpg" },
+      { message: "I'm heartbroken... yet I'll keep smiling for you. Say yes, pretty please!", photo: "reject3.jpg" },
+      { message: "This is your last chance, my love. My heart can't take another 'no'. Will you be my Valentine?", photo: "reject4.jpg" }
+    ];
+
+    // Function to attach event listeners to the Yes and No buttons in the final message section.
+    function attachFinalButtonEvents() {
+      document.getElementById('yesButton').addEventListener('click', function() {
+        // Show confetti and a heart animation on acceptance.
+        confetti({
+          particleCount: 150,
+          spread: 100,
+          origin: { y: 0.6 }
+        });
+        document.getElementById('finalHeart').style.display = 'block';
+        alert('Yay! I can’t wait to make more wonderful memories with you, Jacqui!');
+      });
+      
+      document.getElementById('noButton').addEventListener('click', handleRejection);
+    }
+
+    // Handle rejection by updating the final message area.
+    function handleRejection() {
+      if (rejectionCount < rejectionMessages.length) {
+        // Update the heading and insert a rejection photo.
+        var current = rejectionMessages[rejectionCount];
+        document.getElementById('finalHeading').textContent = current.message;
+        document.getElementById('finalImage').innerHTML = '<img src="' + current.photo + '" alt="Rejection attempt ' + (rejectionCount+1) + '">';
+        rejectionCount++;
+        
+        // If this was the 4th (last) rejection, change the buttons:
+        if (rejectionCount === rejectionMessages.length) {
+          // Remove the No button to force a final decision.
+          document.getElementById('noButton').style.display = 'none';
+          // Optionally, change the Yes button text.
+          document.getElementById('yesButton').textContent = "Please, say yes already!";
+        }
+      }
+    }
+
+    // Attach event listeners once the final message section is shown.
+    attachFinalButtonEvents();
+  </script>
+</body>
 </html>
