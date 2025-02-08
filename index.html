@@ -4,118 +4,202 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jacqui, Will You Be My Valentine?</title>
-  <!-- Import fun fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap" rel="stylesheet">
+  <!-- Import Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Base styles */
+    :root {
+      --primary-color: #ff6b81;
+      --secondary-color: #ffb3b3;
+      --background-gradient: linear-gradient(135deg, #fff1f2, #ffe4e6);
+      --text-color: #333;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
-      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-gradient);
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
+
     .container {
-      text-align: center;
+      width: 100%;
+      max-width: 900px;
       padding: 20px;
+      margin: 20px;
     }
+
     header h1 {
       font-family: 'Pacifico', cursive;
-      font-size: 2.8rem;
-      color: #E91E63;
-      margin-top: 40px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-size: 3rem;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 20px;
     }
-    /* Photos section */
+
+    /* Existing Photos Section */
     .photos {
-      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
+
     .photos img {
-      width: 200px;
+      width: 180px;
       height: auto;
       border-radius: 15px;
-      margin: 10px;
-      border: 5px solid #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
+      border: 4px solid #fff;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
     }
+    .highlight {
+      color: var("skyblue") !important;
+      font-weight: bold;
+    }
+
     .photos img:hover {
       transform: scale(1.05);
     }
+
+    /* Automatically Scrolling Photo Album */
+    .album-container {
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      background: #fff;
+      padding: 10px;
+    }
+
+    .album-container h2 {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .album-track {
+      display: flex;
+      align-items: center;
+      /* Duplicate the images in the markup for a seamless scroll */
+      animation: scroll 20s linear infinite;
+    }
+
+    .album-track img {
+      width: 180px;
+      margin-right: 20px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
     /* Puzzle container styling */
     .puzzle {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 10px;
+      background: var(--card-bg);
+      border-radius: 15px;
       padding: 20px;
       margin: 20px auto;
-      max-width: 500px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow);
     }
+
     .puzzle h2 {
-      color: #C2185B;
+      color: var(--primary-color);
+      margin-bottom: 10px;
     }
+
     .puzzle p {
       font-size: 1.1rem;
-      line-height: 1.4;
+      line-height: 1.5;
     }
+
     .puzzle input[type="text"] {
-      padding: 10px;
+      padding: 12px;
       font-size: 1rem;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      width: 80%;
-      margin: 10px 0;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      width: calc(100% - 24px);
+      margin-bottom: 15px;
     }
+
     .puzzle button {
-      background-color: #E91E63;
+      background-color: var(--primary-color);
       color: #fff;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 1rem;
-      border-radius: 20px;
+      border-radius: 30px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
       margin: 10px;
     }
+
+
     .puzzle button:hover {
-      background-color: #C2185B;
+      background-color: #ff4757;
       transform: scale(1.05);
     }
+
     /* Heart animation for final message */
     .heart-animation {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       margin: 20px auto;
     }
+
     .heart {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 50px;
-      height: 50px;
-      background: #E91E63;
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
       transform: translate(-50%, -50%) rotate(-45deg);
-      transform-origin: center;
+      border-radius: 10px;
       animation: pulse 1s infinite;
     }
+
     .heart::before,
     .heart::after {
       content: "";
       position: absolute;
-      width: 50px;
-      height: 50px;
-      background: #E91E63;
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
       border-radius: 50%;
     }
+
     .heart::before {
-      top: -25px;
+      top: -30px;
       left: 0;
     }
+
     .heart::after {
-      left: 25px;
+      left: 30px;
       top: 0;
     }
+
     @keyframes pulse {
       0% {
         transform: translate(-50%, -50%) scale(1) rotate(-45deg);
@@ -127,31 +211,52 @@
         transform: translate(-50%, -50%) scale(1) rotate(-45deg);
       }
     }
-    /* Final message styling */
+
+    #finalMessage {
+      text-align: center;
+    }
+
     #finalMessage img {
       width: 250px;
       height: auto;
       border-radius: 15px;
-      margin: 10px auto;
+      margin: 20px auto;
       display: block;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow);
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Hey Jacqui, Will You Be My Valentine?</h1>
+      <!-- "Jacqui" is wrapped in a span with the "highlight" class -->
+      <h1>To The Esteemed Miss <span class="highlight">Jacqueline Woo</span>, Will You Be My Valentine?</h1>
     </header>
-    
-    <!-- Cute photos of you two -->
-    <div class="photos">
-      <!-- Replace these with your actual photo paths or URLs -->
-      <img src="photo1.jpg" alt="Our Cute Photo 1">
-      <img src="photo2.jpg" alt="Our Cute Photo 2">
+
+  
+    <!-- Automatically Scrolling Photo Album -->
+    <div class="album-container">
+      
+      <div class="album-track">
+        <!-- Replace these with your album photos. The set is duplicated for a continuous scroll -->
+        <img src="album1.jpeg" alt="Album Photo 1">
+        <img src="album2.jpeg" alt="Album Photo 2">
+        <img src="album3.jpeg" alt="Album Photo 3">
+        <img src="album4.jpeg" alt="Album Photo 4">
+        <img src="album5.jpeg" alt="Album Photo 5">
+        <img src="album6.jpeg" alt="Album Photo 6">
+        <img src="album7.jpeg" alt="Album Photo 7">
+        <img src="album1.jpeg" alt="Album Photo 1">
+        <img src="album2.jpeg" alt="Album Photo 2">
+        <img src="album3.jpeg" alt="Album Photo 3">
+        <img src="album4.jpeg" alt="Album Photo 4">
+        <img src="album5.jpeg" alt="Album Photo 5">
+        <img src="album6.jpeg" alt="Album Photo 6">
+        <img src="album7.jpeg" alt="Album Photo 7">
+      </div>
     </div>
 
-    <!-- Puzzle 1: Solve a Riddle -->
+    <!-- Puzzle 1: Solve the Riddle -->
     <div id="puzzle1" class="puzzle">
       <h2>Puzzle 1: Solve the Riddle</h2>
       <p>
@@ -170,7 +275,7 @@
     <div id="puzzle2" class="puzzle" style="display:none;">
       <h2>Puzzle 2: Unscramble the Letters</h2>
       <p>Unscramble the letters to reveal my secret word:</p>
-      <p style="font-size: 1.2rem; font-weight: bold;">
+      <p style="font-size: 1.2rem; font-weight: 600;">
         E, V, T, A, I, L, N, E
       </p>
       <input type="text" id="answer2" placeholder="Type the unscrambled word">
@@ -182,15 +287,13 @@
     <!-- Puzzle 3: Harder Number Patterns -->
     <div id="puzzle3" class="puzzle" style="display:none;">
       <h2>Puzzle 3: Solve the Number Patterns</h2>
-      <!-- Puzzle 3A -->
       <p>
-        <strong>Puzzle A:</strong> Find the next number in the sequence: <br>
+        <strong>Puzzle A:</strong> Find the next number in the sequence:<br>
         1, 4, 10, 20, 35, ?
       </p>
       <input type="text" id="answer3a" placeholder="Answer for Puzzle A">
-      <!-- Puzzle 3B -->
       <p>
-        <strong>Puzzle B:</strong> Find the next number in the sequence: <br>
+        <strong>Puzzle B:</strong> Find the next number in the sequence:<br>
         2, 3, 5, 9, 17, ?
       </p>
       <input type="text" id="answer3b" placeholder="Answer for Puzzle B">
@@ -202,9 +305,9 @@
     <!-- Final Valentine Message -->
     <div id="finalMessage" class="puzzle" style="display:none;">
       <h2 id="finalHeading">Jacqui, Will You Be My Valentine?</h2>
-      <!-- This container will show a photo when she rejects -->
+      <!-- This area will show a rejection photo if she says no -->
       <div id="finalImage"></div>
-      <!-- Heart animation shown only when she finally accepts -->
+      <!-- Heart animation appears only on acceptance -->
       <div class="heart-animation" id="finalHeart" style="display:none;">
         <div class="heart"></div>
       </div>
@@ -215,13 +318,12 @@
     </div>
   </div>
 
-  <!-- Include canvas-confetti library for a fun celebration -->
+  <!-- Include canvas-confetti for a celebratory burst -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
     // --- Puzzle 1: Riddle ---
     document.getElementById('submit1').addEventListener('click', function() {
       var answer1 = document.getElementById('answer1').value.trim().toLowerCase();
-      // Expected answer: "keyboard"
       if (answer1 === 'keyboard') {
         document.getElementById('feedback1').textContent = "Correct! On to the next puzzle...";
         setTimeout(function(){
@@ -236,7 +338,6 @@
     // --- Puzzle 2: Unscramble Letters ---
     document.getElementById('submit2').addEventListener('click', function() {
       var answer2 = document.getElementById('answer2').value.trim().toLowerCase();
-      // Expected answer: "valentine"
       if (answer2 === 'valentine') {
         document.getElementById('feedback2').textContent = "You got it!";
         setTimeout(function(){
@@ -250,12 +351,10 @@
 
     // --- Puzzle 3: Harder Number Patterns ---
     document.getElementById('submit3').addEventListener('click', function() {
-      // Puzzle 3A: Sequence: 1, 4, 10, 20, 35, ? 
-      // Pattern explanation (differences): 3, 6, 10, 15, then differences of differences: 3, 4, 5, so next difference is 6 → 15+6 = 21; Answer: 35+21 = 56.
       var ansA = parseInt(document.getElementById('answer3a').value.trim(), 10);
-      // Puzzle 3B: Sequence: 2, 3, 5, 9, 17, ? 
-      // Pattern: differences: 1, 2, 4, 8; next difference: 16; Answer: 17+16 = 33.
       var ansB = parseInt(document.getElementById('answer3b').value.trim(), 10);
+      // Puzzle A: Sequence: 1, 4, 10, 20, 35, ? → Differences: 3, 6, 10, 15; second differences: 3, 4, 5; next difference = 6; so next term = 35 + 21 = 56.
+      // Puzzle B: Sequence: 2, 3, 5, 9, 17, ? → Differences: 1, 2, 4, 8; next difference = 16; so next term = 17 + 16 = 33.
       if (ansA === 56 && ansB === 33) {
         document.getElementById('feedback3').textContent = "Excellent work!";
         setTimeout(function(){
@@ -269,18 +368,15 @@
 
     // --- Final Valentine Message and Rejection Handling ---
     var rejectionCount = 0;
-    // Array of rejection messages and associated photo filenames.
     var rejectionMessages = [
-      { message: "Oh no, don't say no, Jacqui! I promise to make you laugh every day!", photo: "reject1.jpg" },
-      { message: "But Jacqui, you know how much I adore you. Please reconsider?", photo: "reject2.jpg" },
-      { message: "I'm heartbroken... yet I'll keep smiling for you. Say yes, pretty please!", photo: "reject3.jpg" },
-      { message: "This is your last chance, my love. My heart can't take another 'no'. Will you be my Valentine?", photo: "reject4.jpg" }
+      { message: "Oh no, don't say no, Jacqui! I promise to make you laugh every day!", photo: "reject4.jpeg" },
+      { message: "But Jacqui, you know how much I adore you. Please reconsider?", photo: "reject2.jpeg" },
+      { message: "I'm heartbroken... yet I'll keep smiling for you. Say yes, pretty please!", photo: "reject3.jpeg" },
+      { message: "This is your last chance. My heart can't take another 'no' (I will die). Will you be my Valentine?", photo: "reject1.jpeg" }
     ];
 
-    // Function to attach event listeners to the Yes and No buttons in the final message section.
     function attachFinalButtonEvents() {
       document.getElementById('yesButton').addEventListener('click', function() {
-        // Show confetti and a heart animation on acceptance.
         confetti({
           particleCount: 150,
           spread: 100,
@@ -293,26 +389,19 @@
       document.getElementById('noButton').addEventListener('click', handleRejection);
     }
 
-    // Handle rejection by updating the final message area.
     function handleRejection() {
       if (rejectionCount < rejectionMessages.length) {
-        // Update the heading and insert a rejection photo.
         var current = rejectionMessages[rejectionCount];
         document.getElementById('finalHeading').textContent = current.message;
         document.getElementById('finalImage').innerHTML = '<img src="' + current.photo + '" alt="Rejection attempt ' + (rejectionCount+1) + '">';
         rejectionCount++;
-        
-        // If this was the 4th (last) rejection, change the buttons:
         if (rejectionCount === rejectionMessages.length) {
-          // Remove the No button to force a final decision.
           document.getElementById('noButton').style.display = 'none';
-          // Optionally, change the Yes button text.
           document.getElementById('yesButton').textContent = "Please, say yes already!";
         }
       }
     }
 
-    // Attach event listeners once the final message section is shown.
     attachFinalButtonEvents();
   </script>
 </body>
